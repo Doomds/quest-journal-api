@@ -11,6 +11,13 @@ public class Region {
 
     private String nom;
 
+    public Region() {
+    }
+
+    public Region(String nom) {
+        this.nom = nom;
+    }
+
     public Long getId() {
         return id;
     }
