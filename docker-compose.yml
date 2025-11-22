@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  quest-db:
+    image: mysql:8.0
+    container_name: quest-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: journal_quete
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./db/1_structure.sql:/docker-entrypoint-initdb.d/1_structure.sql
+      - ./db/2_data.sql:/docker-entrypoint-initdb.d/2_data.sql
