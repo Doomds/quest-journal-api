@@ -1,5 +1,4 @@
 package com.quest.journal.entity;
-
 import jakarta.persistence.*;
 
 @Entity
