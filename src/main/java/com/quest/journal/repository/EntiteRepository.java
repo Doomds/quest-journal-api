@@ -25,5 +25,17 @@ public class EntiteRepository implements PanacheRepository<Entite> {
         return findById(id);
     }
 
+    @Transactional
+    public Entite update(Long id, Entite updated) {
+        Entite entiteExisting = findById(id);
+        if (entiteExisting == null) {
+            return null;
+        }
+        return entiteExisting;
+    }
 
+    @Transactional
+    public boolean delete(Long id) {
+        return deleteById(id);
+    }
 }
